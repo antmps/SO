@@ -251,15 +251,19 @@ VOID UtActivate (HANDLE ThreadHandle) {
 
 BOOL UtAlive(HANDLE thread){
 
-	if (IsListEmpty(&AliveQueue)) return FALSE;
+	if (IsListEmpty(&AliveQueue)){
+		return FALSE;
+	}
+
+	PUTHREAD firstThread = (PUTHREAD)AliveQueue.Flink;
+	if (thread == firstThread){
+		return TRUE;
+	}
+	PUTHREAD nextThread;
 	
-	PUTHREAD firstThread = CONTAINING_RECORD(RemoveHeadList(&AliveQueue), UTHREAD, Link);
-	if (thread == firstThread) return TRUE;
-	PUTHREAD listThread;
-	
-	while (listThread != firstThread){
-		listThread = CONTAINING_RECORD(RemoveHeadList(&AliveQueue), UTHREAD, Link);
-		if (thread == listThread) return TRUE;
+	while (nextThread != firstThread){
+		nextThread = firstThread->Link.Flink;
+		if (thread == nextThread) return TRUE;
 	}
 
 	return FALSE;
@@ -283,6 +287,19 @@ DWORD UtJoin(HANDLE thread){
 }
 
 
+BOOL UtJoinCancel(HANDLE thread){
+
+}
+
+
+VOID UtSwitchTo(HANDLE threadToRun){
+
+	if (&((PUTHREAD)threadToRun)->State != "Ready"){ return; }
+	RunningThread->State = "Ready";
+	ContextSwitch(RunningThread, threadToRun);
+	RunningThread->State = "Running";
+
+}
 
 ///////////////////////////////////////
 //
