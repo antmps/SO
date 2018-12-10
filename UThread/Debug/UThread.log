@@ -1,27 +1,17 @@
-﻿Build started 26-11-2018 14:27:33.
+﻿Build started 27-11-2018 09:45:13.
      1>Project "C:\Users\habber.asimoes\Desktop\SO\6_Uthreads\UThread\UThread.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _USRDLL /D UTHREAD_DLL /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt UThread.c
          UThread.c
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(256): error C2275: 'PUTHREAD' : illegal use of this type as an expression
-                 c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthreadinternal.h(64) : see declaration of 'PUTHREAD'
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(256): error C2146: syntax error : missing ';' before identifier 'firstThread'
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(256): error C2065: 'firstThread' : undeclared identifier
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(256): warning C4047: '=' : 'int' differs in levels of indirection from 'UTHREAD *'
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(257): error C2065: 'firstThread' : undeclared identifier
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(257): warning C4047: '==' : 'HANDLE' differs in levels of indirection from 'int'
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(258): error C2275: 'PUTHREAD' : illegal use of this type as an expression
-                 c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthreadinternal.h(64) : see declaration of 'PUTHREAD'
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(258): error C2146: syntax error : missing ';' before identifier 'listThread'
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(258): error C2065: 'listThread' : undeclared identifier
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(260): error C2065: 'listThread' : undeclared identifier
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(260): error C2065: 'firstThread' : undeclared identifier
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(261): error C2065: 'listThread' : undeclared identifier
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(261): warning C4047: '=' : 'int' differs in levels of indirection from 'UTHREAD *'
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(262): error C2065: 'listThread' : undeclared identifier
-     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(262): warning C4047: '==' : 'HANDLE' differs in levels of indirection from 'int'
-     1>Done Building Project "C:\Users\habber.asimoes\Desktop\SO\6_Uthreads\UThread\UThread.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(265): warning C4133: '=' : incompatible types - from '_LIST_ENTRY *' to 'PUTHREAD'
+     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(297): warning C4047: '!=' : 'PUCHAR *' differs in levels of indirection from 'char [6]'
+     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(264): warning C4700: uninitialized local variable 'nextThread' used
+     1>c:\users\habber.asimoes\desktop\so\6_uthreads\uthread\uthread.c(292): warning C4716: 'UtJoinCancel' : must return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\habber.asimoes\Desktop\SO\6_Uthreads\Debug\UThread.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\habber.asimoes\Desktop\SO\6_Uthreads\Debug\UThread.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /NXCOMPAT /IMPLIB:"C:\Users\habber.asimoes\Desktop\SO\6_Uthreads\Debug\UThread.lib" /MACHINE:X86 /DLL Debug\UThread.obj
+         UThread.vcxproj -> C:\Users\habber.asimoes\Desktop\SO\6_Uthreads\Debug\UThread.dll
+     1>Done Building Project "C:\Users\habber.asimoes\Desktop\SO\6_Uthreads\UThread\UThread.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
 Time Elapsed 00:00:01.01
